@@ -14,7 +14,7 @@ using json = nlohmann::json;
 Settings Settings::LoadFromFile()
 {
     Settings settings;
-    std::string path = std::filesystem::current_path().string() + "/settings.json";
+    std::string path = std::filesystem::current_path().string() + "/config/settings.json";
     if(std::filesystem::exists(path))
     {
         std::ifstream settingsFile(path, std::ios::in | std::ios::binary);

@@ -28,6 +28,6 @@ private:
 #ifdef __unix__
     int socketDescriptor = -1;
 #elif defined(_WIN32) || defined(WIN32)
-    SOCKET socketDescriptor;
+    SOCKET socketDescriptor = INVALID_SOCKET;
 #endif
 };

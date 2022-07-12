@@ -49,8 +49,9 @@ void SocketCommunication::connectSocket(const char *address, int port)
     }
     std::cout << "Connected to the server!" << std::endl;
 
+    //Set recv timeout to 1 sec
     struct timeval tv;
-    tv.tv_sec = 4.0;
+    tv.tv_sec = 1.0;
     tv.tv_usec = 0;
     setsockopt(socketDescriptor, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof tv);
 
@@ -117,8 +118,9 @@ void SocketCommunication::connectSocket(const char *address, int port)
         return;
     }
 
+    //Set recv timeout to 1 sec
     // WINDOWS
-    DWORD timeout = 4.0 * 1000;
+    DWORD timeout = 1.0 * 1000;
     setsockopt(socketDescriptor, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof timeout);
 #endif
 
