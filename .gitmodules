@@ -1,0 +1,3 @@
+[submodule "DesktopClient/Dependencies/traypp"]
+	path = DesktopClient/Dependencies/traypp
+	url = https://github.com/Soundux/traypp
