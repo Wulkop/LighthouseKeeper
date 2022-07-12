@@ -13,5 +13,11 @@ include_directories("include")
 
 # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(LighthouseKeeper ${SOURCE_FILES})
-target_link_libraries(LighthouseKeeper stdc++fs)
+if (UNIX)
+    target_link_libraries(LighthouseKeeper stdc++fs)
+endif (UNIX)
+if (WIN32)
+    target_link_libraries(LighthouseKeeper Ws2_32 Mswsock Advapi32)
+endif (WIN32)
+
 

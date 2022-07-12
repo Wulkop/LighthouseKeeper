@@ -6,6 +6,7 @@
 #include <json.hpp>
 #include <fstream>
 #include <iostream>
+#include <filesystem>
 
 // for convenience
 using json = nlohmann::json;
