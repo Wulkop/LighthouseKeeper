@@ -24,6 +24,7 @@ bool WindowManager::IsConsoleVisible()
 #elif defined(_WIN32) || defined(WIN32)
     return ::IsWindowVisible(::GetConsoleWindow()) != FALSE;
 #endif
+    return true;
 }
 void WindowManager::OnToggleConsole(bool active)
 {

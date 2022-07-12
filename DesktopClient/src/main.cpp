@@ -12,15 +12,14 @@
 #include <tray.hpp>
 #include <ThreadMonitor.h>
 #include <WindowManager.h>
-
-
+#include <filesystem>
 
 
 int main()
 {
     ThreadMonitor threadMonitor;
     WindowManager windowManager;
-    Tray::Tray tray("LighthouseKeeper", "res/icon.ico");
+    Tray::Tray tray("LighthouseKeeper", std::filesystem::current_path().string() +  "/res/icon.ico");
     tray.addEntry(Tray::Button("Exit", [&] { tray.exit(); threadMonitor.EndThread(); }));
     tray.addEntry(Tray::Toggle("Toggle console", false, std::bind(&WindowManager::OnToggleConsole, windowManager, std::placeholders::_1)));
     threadMonitor.StartThead();

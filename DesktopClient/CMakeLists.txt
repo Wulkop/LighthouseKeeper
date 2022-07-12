@@ -23,7 +23,7 @@ add_executable(LighthouseKeeper ${SOURCE_FILES})
 target_link_libraries(LighthouseKeeper tray)
 
 if (UNIX)
-    target_link_libraries(LighthouseKeeper stdc++fs)
+    target_link_libraries(LighthouseKeeper stdc++fs pthread)
 endif (UNIX)
 if (WIN32)
     target_link_libraries(LighthouseKeeper Ws2_32 Mswsock Advapi32)
